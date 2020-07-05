@@ -107,14 +107,12 @@ DLLEXPORT ULONG_PTR WINAPI ReflectiveLoader(VOID)
 	// STEP 1: process the kernels exports for the functions our loader needs...
 
 	// get the Process Enviroment Block
-#ifdef WIN_X64
+#if defined(_WIN64) && defined(_M_AMD64)
 	uiBaseAddress = __readgsqword(0x60);
-#else
-#ifdef WIN_X86
+#elif defined(_WIN32) && defined(_M_IX86)
 	uiBaseAddress = __readfsdword(0x30);
-#else WIN_ARM
+#elif defined(_WIN32) && defined(_M_ARM)
 	uiBaseAddress = *(DWORD*)((BYTE*)_MoveFromCoprocessor(15, 0, 13, 0, 2) + 0x30);
-#endif
 #endif
 
 	// get the processes loaded modules. ref: http://msdn.microsoft.com/en-us/library/aa813708(VS.85).aspx
@@ -402,7 +400,7 @@ DLLEXPORT ULONG_PTR WINAPI ReflectiveLoader(VOID)
 					*(ULONG_PTR*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += uiLibraryAddress;
 				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_HIGHLOW)
 					*(DWORD*)(uiValueA + ((PIMAGE_RELOC)uiValueD)->offset) += (DWORD)uiLibraryAddress;
-#ifdef WIN_ARM
+#if defined(_WIN32) && defined(_M_ARM)
 				// Note: On ARM, the compiler optimization /O2 seems to introduce an off by one issue, possibly a code gen bug. Using /O1 instead avoids this problem.
 				else if (((PIMAGE_RELOC)uiValueD)->type == IMAGE_REL_BASED_ARM_MOV32T)
 				{
