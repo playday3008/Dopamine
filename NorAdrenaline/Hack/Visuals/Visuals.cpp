@@ -1,5 +1,5 @@
 #include "../../Required.h"
-#include "../../icons.h"
+#include "../../Resources/icons.h"
 
 CVisuals g_Visuals;
 

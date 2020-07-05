@@ -1,5 +1,5 @@
 ﻿#include "../../../Required.h"
-#include "../../../images.h"
+#include "../../../Resources/images.h"
 
 CMenu g_Menu;
 

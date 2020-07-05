@@ -330,6 +330,15 @@
     <ClInclude Include="raw_inputs.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Resources\icons.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\images.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\detours.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="QAngle.cpp">
@@ -415,7 +424,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="detours.lib" />
-    <Library Include="vgui.lib" />
+    <Library Include="Resources\detours.lib">
+      <Filter>Файлы ресурсов</Filter>
+    </Library>
+    <Library Include="Resources\vgui.lib">
+      <Filter>Файлы ресурсов</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vgui.dll">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
 </Project>

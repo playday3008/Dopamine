@@ -19,7 +19,7 @@
 #include "Structures.h"
 #include "Offsets.h"
 #include "Hook.h"
-#include "detours.h"
+#include "Resources/detours.h"
 #include "StudioModelRenderer.h"
 
 #define VIRTUALIZER_START \

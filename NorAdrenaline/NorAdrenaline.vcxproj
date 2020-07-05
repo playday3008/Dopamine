@@ -113,6 +113,9 @@
     <ClInclude Include="Reflective\ReflectiveDLLInjection.h" />
     <ClInclude Include="Reflective\ReflectiveLoader.h" />
     <ClInclude Include="Required.h" />
+    <ClInclude Include="Resources\detours.h" />
+    <ClInclude Include="Resources\icons.h" />
+    <ClInclude Include="Resources\images.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="StudioModelRenderer.h" />
     <ClInclude Include="Usermsg.h" />
@@ -210,8 +213,11 @@
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="detours.lib" />
-    <Library Include="vgui.lib" />
+    <Library Include="Resources\detours.lib" />
+    <Library Include="Resources\vgui.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vgui.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
