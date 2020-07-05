@@ -41,8 +41,8 @@
 #define DEREF_16( name )*(WORD *)(name)
 #define DEREF_8( name )*(BYTE *)(name)
 
-typedef ULONG_PTR (WINAPI * REFLECTIVELOADER)( VOID );
-typedef BOOL (WINAPI * DLLMAIN)( HINSTANCE, DWORD, LPVOID );
+typedef ULONG_PTR(WINAPI* REFLECTIVELOADER)(VOID);
+typedef BOOL(WINAPI* DLLMAIN)(HINSTANCE, DWORD, LPVOID);
 
 #define DLLEXPORT   __declspec( dllexport ) 
 
